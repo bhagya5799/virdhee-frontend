@@ -44,13 +44,18 @@ const Home = () => {
                         height="100%" width='100%' className='bg-img' alt='bg-img' />
                 </div>
                 <div className='dot-container'>
-                    <span className='dot'>.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.</span>
-                    <span className='dot'>.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.</span>
-                    <span className='dot'>.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.</span>
-                    <span className='dot'>.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.</span>
-                    <span className='dot'>.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.</span>
-                    <span className='dot'>.&nbsp;.&nbsp;.&nbsp;.&nbsp;.&nbsp;.</span>
+                    {[...Array(6)].map((_, rowIndex) => (
+                        <div key={rowIndex} className='dot-row'>
+                            {[...Array(5)].map((_, colIndex) => (
+                                <span key={colIndex} className='dot'>
+                                    .&nbsp;
+                                </span>
+                            ))}
+                        </div>
+                    ))}
                 </div>
+
+
                 <div className='companey-profile'>
                     {/* <span className='companey-title'>Virdhee</span> */}
                     <img src='https://vridhee.com/img/log_footer.PNG' className='companey-title' alt='logo' />
